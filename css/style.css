@@ -1,1 +1,371 @@
-/* ini css */
+/* warna tema yang dipakai disimpan root */
+:root {
+  --primary: #fc8eac;
+  --bg: #fcfcfcfc; /* warna background */
+}
+
+/* font-family */
+* {
+  /* reset font-family */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* agar tidak perlu ngatur dimensi dari elemen saat memberi padding atau margin */
+  outline: none; /* berguna ketika mau kasih styke untuk butto, form */
+  border: none; /* kita punya kendali atas border  */
+  text-decoration: none; /* tujuan biar saat membuat link gak akan ada garis bawah */
+}
+
+body {
+  font-family: "poppins", sans-serif;
+  background-color: var(--primary);
+   color: #ffffff; 
+  min-height: 3000px; /*jangan lupa di hapus */
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between; /* sejajar vertikal kontent */
+  align-items: center;
+  padding: 1.4rem 7%; /* karena tidak dibuat font-size maka semua akan relative 16px (1rem x16px) (7%) persentasi biar responsive ke hp tab */
+  background-color: rgba(248, 231, 185, 0.8);
+  border-bottom: 1px solid #ffffff;
+  position: fixed; /* tujuan saat discroll biar navbar nya tidak berubah posisi*/
+  top: 0; /* supaya mentok ke atas */
+  left: 0; /* supaya penuh kiri dan kanan */
+  right: 0;
+  z-index: 9999; /* agar gak ada elemen lain yang bisa ngalahin navbar */
+}
+
+.navbar .navbar-logo {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  font-style: italic;
+}
+
+.navbar .navbar-logo span {
+  color: var(--primary);
+}
+
+/* navbar-nav a */
+.navbar .navbar-nav a {
+  color: #ffffff;
+  display: inline-block;
+  font-size: 1.3rem;
+  margin: 0 1rem;
+}
+
+/* hover a (home, about dll) */
+.navbar .navbar-nav a:hover {
+  color: var(--primary);
+}
+
+.navbar .navbar-nav a::after {
+  content: ""; /* tandain dulu nanti diakhir cek */
+  display: block;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.1rem solid var(--primary);
+  transform: scaleX(0);
+  transition: 0.2s linear;
+}
+
+.navbar .navbar-nav a:hover::after {
+  transform: scaleX(0.5);
+}
+
+/* navbar-extra a */
+.navbar .navbar-extra a {
+  color: #ffffff;
+  margin: 0 0.3rem;
+}
+
+.navbar .navbar-extra a:hover {
+  color: var(--primary);
+}
+
+/* ini membuat harburger menu menghilang saat di pc dan muncul saat di andorid */
+#hamburger-menu {
+  display: none;
+}
+
+/* section hero */
+.hero{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-image: url(../img/wedding.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+
+.hero::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 30%;
+    bottom: 0;
+    background: linear-gradient(0deg,
+    rgb(252, 142, 172) 8%, rgb(255, 97, 202, 0) 25%);
+}
+
+.hero .content {
+    padding: 1.4rem 7%;
+    max-width: 60rem;
+}
+
+.hero .content h1 {
+    font-size: 2.5em;
+    color:#ffffff;
+    text-shadow: 1px 1px 3px  rgb(252, 142, 172);
+    line-height: 1.2;
+}
+
+.hero .content h1 span {
+    color: var(--primary);
+}
+
+.hero .content p {
+    font-size: 1.4rem;
+    margin-top: 1rem;
+    line-height: 1.4;
+    font-weight: 100;
+    text-shadow: 1px 1px 3px  rgb(252, 142, 172);  
+    /* mix blend mode tolong cek lagi */
+    mix-blend-mode: difference; 
+}
+
+.hero .content .cta {
+    margin-top: 1rem;
+    display: inline-block;
+    padding: 1rem 3rem;
+    font-size: 1.4rem;
+    color: #fff;
+    background-color: var(--primary);
+    border-radius: 0.5rem;
+    box-shadow: 1px 1px 1px  rgb(252, 142, 172);
+    
+} 
+
+/* section about */
+.about,
+.jasa,
+.kontak{
+    /* padding atasnya dibuat lebih tinggi */
+    padding: 8rem 7% 1.4rem;
+}
+
+.about h2,
+.jasa h2,
+.kontak h2 {
+    text-align: center ;
+    font-size: 2.6rem;
+    margin-bottom: 3rem;
+}
+
+/* .about h2 span,
+.jasa span,
+.kontak span {     \
+color: var(--primary);
+}*/
+
+.about .row {
+    display: flex;
+}
+
+.about .row .about-img {
+    flex: 1 1 45rem;
+}
+
+/* edit lagi */
+.about .row .about-img img {
+    width: 80%;
+}
+
+
+.about .row .about-content {
+    flex: 1 1 35rem;
+    padding: 0 1rem; 
+}
+
+.about .row h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.about .row .about-content p {
+    margin-bottom: 0.8rem;
+    font-size: 1.4rem;
+    font-weight: 100;
+    height: 1.6;
+}
+
+/* section jasa */
+.jasa h2,
+.kontak h2 {
+    margin-bottom: 1rem;
+}
+
+.jasa p,
+.kontak p {
+    text-align: center;
+    max-width: 30rem;
+    margin: auto;
+    font-weight: 100;
+    line-height:1.6;
+}
+
+.jasa .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 5rem;
+    justify-content: space-between;
+}
+.jasa .row .jasa-card {
+     text-align: center;
+ }  
+
+.jasa .row .jasa-card img{
+    border-radius: 50%;
+    width: 80%;
+    padding: 1.5rem;
+ }
+.jasa .row .jasa-card-tittle {
+    text-align: center;
+    margin:0.5rem 0 0 0;
+}
+
+/* section contact */
+.kontak .row  {
+    display: flex;
+    margin-top: 2rem;
+    background-color: bisque;
+    
+}
+
+.kontak .row  .peta {
+    flex: 1 1 45rem;
+    width: 100%;
+    object-fit: cover;
+}
+
+.kontak .row form {
+    flex: 1 1 45rem;
+    padding: 5rem;
+    text-align: center;
+
+}
+
+.kontak .row form .input-grup {
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+    background-color: #fff;
+    border: 1px solid #eee;
+    padding: 2rem;
+}
+
+.kontak .row form .input-grup input {
+    width: 80%;
+    padding:2rem;
+    font-size: 1.2rem;
+    background: none;
+}
+
+
+}
+
+/* Media Queries =responsive */
+
+/* Laptop */
+@media (max-width: 1366px) {
+  html {
+    font-size: 75%;
+  }
+}
+
+/* Tablet */
+
+@media (max-width: 756px) {
+  html {
+    font-size: 62%;
+  }
+
+  /* membuat hamburger-menu muncul di tablet */
+  #hamburger-menu {
+    display: inline-block;
+  }
+
+  /* dipindahkan ke keluar layar*/
+  .navbar .navbar-nav {
+    position: absolute; /* kita bisa dengan mudah gerakij tanpa ganggu elemen lain*/
+    top: 100%; /* supaya nempel ke atas*/
+    right: -100%; /* supata keluar dari layar*/
+    background-color: #ffffff;
+    width: 30rem;
+    height: 100vh;
+    transition: 0.4s;
+  }
+
+  /* menambah kelas active */
+  .navbar .navbar-nav.active{
+    right: 0;
+  }
+
+  .navbar .navbar-nav a {
+    color: var(--primary);
+    display: block;
+    margin: 1.5rem;
+    padding: 0.5rem;
+    font-size: 3rem;
+  }
+  
+  .navbar .navbar-nav a::after{
+    transform-origin: 0 0;
+  }
+  .navbar .navbar-nav a:hover::after{
+    transform: scaleX(0.5);
+  }
+
+  /* tulisan turun kebawah */
+  .about .row {
+    flex-wrap: wrap;
+  }
+
+  /* membuat gambar 3/4 */
+  .about .row .about-img img {
+    height: 24rem;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  /* ilangin padding */
+  .about .row .about-content{
+    padding: 0;
+  }
+
+  .about .row .about-content h3 {
+    margin-top: 1rem ;
+    font-size: 2rem;
+  }
+  .about .row .about-content .p {
+    font-size: 1.6rem;
+  }
+
+  .jasa p {
+    font-size: 1.2rem;
+  }
+
+}
+
+/* handphone */
+
+@media (max-width: 450px) {
+  html {
+    font-size: 55%;
+  }
+}
