@@ -1,7 +1,7 @@
 /* warna tema yang dipakai disimpan root */
 :root {
   --primary: #fc8eac;
-  --bg: #fcfcfcfc; /* warna background */
+  --bg: #f8e7b9cc; /* warna background */
 }
 
 /* font-family */
@@ -14,12 +14,15 @@
   border: none; /* kita punya kendali atas border  */
   text-decoration: none; /* tujuan biar saat membuat link gak akan ada garis bawah */
 }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   font-family: "poppins", sans-serif;
   background-color: var(--primary);
    color: #ffffff; 
-  min-height: 3000px; /*jangan lupa di hapus */
+   /*jangan lupa di hapus */
 }
 
 /* Navbar */
@@ -28,7 +31,7 @@ body {
   justify-content: space-between; /* sejajar vertikal kontent */
   align-items: center;
   padding: 1.4rem 7%; /* karena tidak dibuat font-size maka semua akan relative 16px (1rem x16px) (7%) persentasi biar responsive ke hp tab */
-  background-color: rgba(248, 231, 185, 0.8);
+  background-color: #f8e7b9cc;
   border-bottom: 1px solid #ffffff;
   position: fixed; /* tujuan saat discroll biar navbar nya tidak berubah posisi*/
   top: 0; /* supaya mentok ke atas */
@@ -255,7 +258,7 @@ color: var(--primary);
 
 .kontak .row form {
     flex: 1 1 45rem;
-    padding: 5rem;
+    padding: 5rem 2rem;
     text-align: center;
 
 }
@@ -264,8 +267,8 @@ color: var(--primary);
     display: flex;
     align-items: center;
     margin-top: 2rem;
-    background-color: #fff;
-    border: 1px solid #eee;
+    background-color: var(--bg);
+    border: 1px solid #ffffff;
     padding: 2rem;
 }
 
@@ -277,7 +280,61 @@ color: var(--primary);
 }
 
 
+.kontak .row form .button {
+  margin-top: 3rem;
+  display: inline-block;
+  padding:  1rem 3rem;
+  font-size: 1.7rem;
+  color: #ffffff;
+  background: var(--primary);
+  cursor: pointer;
 }
+
+/* footer */
+footer {
+  background-color: var(--bg);
+  text-align: center;
+  padding: 1rem 0 3rem;
+  margin-top: 3rem;
+}
+
+footer .medsos {
+  padding: 1rem;
+}
+
+footer .medsos a {
+  color: #fff;
+  margin: 1rem; /* biar ada jarak kiri kanan */
+}
+
+footer .medsos a:hover {
+  color: var(--primary);
+}
+
+footer .link-medsos {
+  margin-bottom: 1.4rem;
+}
+footer .link-medsos a {
+  color: #ffffff;
+  padding: 0.7rem 0.5rem;
+}
+
+footer .link-medsos a:hover {
+  color: var(--primary);
+}
+
+footer .credit {
+  font-size: 0.8rem;
+ 
+}
+
+footer .credit a{
+  color: var(--primary);
+  font-weight: 700;
+
+}
+
+
 
 /* Media Queries =responsive */
 
@@ -360,6 +417,17 @@ color: var(--primary);
     font-size: 1.2rem;
   }
 
+  .kontak .row {
+    flex-wrap: wrap;
+  }
+
+  .kontak .row .peta {
+    height: 30rem;
+  }
+
+  .kontak .row form {
+    padding-top: 0;
+  }
 }
 
 /* handphone */
